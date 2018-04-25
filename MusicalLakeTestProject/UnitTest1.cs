@@ -8,6 +8,13 @@ namespace MusicalLakeTestProject
     public class UnitTest1
     {
         [TestMethod]
+        public void TestPlayNotExist()
+        {
+            var play = Musical.Play("xyz");
+            Assert.AreEqual(string.Empty, play);
+        }
+
+        [TestMethod]
         public void TestPlayExample1()
         {
             var play = Musical.Play("brr");
@@ -36,10 +43,26 @@ namespace MusicalLakeTestProject
         }
 
         [TestMethod]
-        public void TestPlayNotExist()
+        public void TestPlayExample5()
         {
-            var play = Musical.Play("xyz");
-            Assert.AreEqual(string.Empty, play);
+            var play = Musical.Play("cric-cric");
+            Assert.AreEqual("brrah", play);
         }
+
+        [TestMethod]
+        public void TestPlayExample6()
+        {
+            var play = Musical.Play("fiu");
+            Assert.AreEqual("cric-cric, brrah", play);
+        }
+
+        [TestMethod]
+        public void TestPlayExample7()
+        {
+            var play = Musical.Play("pep");
+            Assert.AreEqual("birip, trri-trri, croac", play);
+        }
+
+
     }
 }
